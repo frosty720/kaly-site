@@ -7,49 +7,44 @@ import {
   BarChartHorizontal,
 } from "lucide-react";
 
-const roadmapItems = [
+const roadmapPhases = [
   {
-    title: "KalySwap V3 & CEX Experience",
-    description:
-      "Upgrading KalySwap to UniSwap V3 core, introducing an orderbook model for a CEX-like trading experience on a DEX.",
-    icon: BarChartHorizontal,
-    status: "Upcoming",
-  },
-  {
-    title: "Regulatory Readiness (KYC)",
-    description:
-      "Integrating KYC processes to meet regulatory requirements and facilitate institutional adoption.",
-    icon: Scale,
-    status: "Upcoming",
-  },
-  {
-    title: "Fiat On-Ramp",
-    description:
-      "Enabling users to buy cryptocurrency directly with credit/debit cards through integrated partners.",
-    icon: CreditCard,
-    status: "Upcoming",
-  },
-  {
-    title: "Lending & Borrowing",
-    description:
-      "Introducing decentralized lending and borrowing protocols to expand DeFi capabilities on KalyChain.",
-    icon: University, // Using University icon for lending/borrowing/protocols
-    status: "Planned",
-  },
-  {
-    title: "Leveraged Trading",
-    description:
-      "Offering leveraged trading options within the KalyChain ecosystem for advanced traders.",
-    icon: TrendingUp,
-    status: "Planned",
-  },
-  {
-    title: "KalyLaunchPad",
-    description:
-      "Launching a platform to support and incubate new projects building on the KalyChain network.",
+    phase: "Short Term (2024–2025)",
+    items: [
+      "Mainnet launch (PoS, EVM‑compatible)",
+      "DAO v1 & first on‑chain proposals",
+      "Launch Kalypay & KalyScan",
+      "First DEX listing + CMC/CG registration",
+      "Initial developer grants"
+    ],
     icon: Rocket,
-    status: "Planned",
+    status: "active",
+    color: "bg-amber-500/20 text-amber-400 ring-amber-500/30"
   },
+  {
+    phase: "Mid Term (2026–2029)",
+    items: [
+      "Regional expansion (Africa, Asia, LATAM)",
+      "SME adoption (POS, fiat ramps, supply chain)",
+      "Stablecoin KUSD & real‑world asset tokenization",
+      "Banking partnerships & government pilots"
+    ],
+    icon: TrendingUp,
+    status: "upcoming",
+    color: "bg-blue-500/20 text-blue-400 ring-blue-500/30"
+  },
+  {
+    phase: "Long Term (2030–2033)",
+    items: [
+      "Kalychain Layer 2 for enterprise scalability",
+      "Mass adoption by SMEs & governments",
+      "Government‑to‑Citizen (G2C) payments",
+      "Global leadership in real‑world finance blockchain"
+    ],
+    icon: University,
+    status: "planned",
+    color: "bg-purple-500/20 text-purple-400 ring-purple-500/30"
+  }
 ];
 
 export function RoadmapSection() {
@@ -58,51 +53,74 @@ export function RoadmapSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Innovating for the Future
+            Roadmap (10‑Year DAO‑Validated Vision)
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Our roadmap outlines key developments to enhance the KalyChain
-            ecosystem, driving innovation in DeFi and enterprise blockchain
-            solutions.
+            Every phase is community‑validated by DAO → ensuring agility & adaptability.
+            Our comprehensive roadmap spans from mainnet launch to global leadership in real‑world finance blockchain.
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-500/30 via-amber-500/70 to-amber-500/30 transform -translate-x-1/2 rounded-full"></div>
-
-          <div className="space-y-12">
-            {roadmapItems.map((item, index) => (
-              <div
-                key={index}
-                className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
-              >
-                {/* Dot on Timeline */}
-                <div className="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-gray-800 border-2 border-amber-500 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 group-hover:scale-125 group-hover:bg-amber-500 shadow-md">
-                  <div className="w-3 h-3 bg-amber-400 rounded-full transition-all duration-300 group-hover:bg-white"></div>
+        <div className="max-w-6xl mx-auto space-y-12">
+          {roadmapPhases.map((phase, index) => (
+            <div key={index} className="relative">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <div className={`h-16 w-16 rounded-full flex items-center justify-center mb-6 ring-2 ${phase.color}`}>
+                    <phase.icon className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{phase.phase}</h3>
+                  <div className="space-y-3">
+                    {phase.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className="flex items-start gap-3">
+                        <div className="h-2 w-2 rounded-full bg-amber-400 mt-2 flex-shrink-0"></div>
+                        <p className="text-gray-300">{item}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Content Card */}
-                <div className="w-full md:w-[calc(50%-2rem)] bg-gray-800/60 backdrop-blur-md rounded-xl p-6 border border-gray-700/60 shadow-lg transition-all duration-300 group-hover:border-amber-500/50 group-hover:shadow-amber-500/10">
-                  <div className="flex items-center mb-3">
-                    <item.icon className="h-6 w-6 text-amber-400 mr-3 flex-shrink-0" />
-                    <h3 className="text-xl font-semibold text-white">
-                      {item.title}
-                    </h3>
-                    <span
-                      className={`ml-auto text-xs font-medium px-2.5 py-0.5 rounded-full ${
-                        item.status === "Upcoming"
-                          ? "bg-blue-500/20 text-blue-300"
-                          : "bg-purple-500/20 text-purple-300"
-                      }`}
-                    >
-                      {item.status}
-                    </span>
+                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <div className="relative">
+                    <div className="absolute -top-10 -left-10 w-40 h-40 bg-amber-500/20 rounded-full blur-3xl"></div>
+                    <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-amber-500/20 rounded-full blur-3xl"></div>
+
+                    <div className="relative z-10 bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
+                      <div className="text-center">
+                        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 ${
+                          phase.status === 'active' ? 'bg-amber-500/20 text-amber-400' :
+                          phase.status === 'upcoming' ? 'bg-blue-500/20 text-blue-400' :
+                          'bg-purple-500/20 text-purple-400'
+                        }`}>
+                          <span className="text-sm font-medium capitalize">{phase.status}</span>
+                        </div>
+                        <h4 className="text-lg font-bold text-white mb-3">
+                          {phase.phase.split('(')[0].trim()}
+                        </h4>
+                        <p className="text-gray-400 text-sm">
+                          {phase.items.length} major milestones planned for this phase
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-gray-400 text-sm">{item.description}</p>
                 </div>
               </div>
-            ))}
+
+              {index < roadmapPhases.length - 1 && (
+                <div className="flex justify-center mt-12">
+                  <div className="h-12 w-px bg-gradient-to-b from-amber-500/50 to-transparent"></div>
+                </div>
+              )}
+            </div>
+          ))}
+
+          {/* DAO Validation Note */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500/20 backdrop-blur-sm rounded-full">
+              <span className="text-amber-200 font-medium">
+                👉 Every phase is community‑validated by DAO → ensuring agility & adaptability
+              </span>
+            </div>
           </div>
         </div>
       </div>

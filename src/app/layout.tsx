@@ -9,8 +9,8 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "KalyChain - Enterprise-Grade Blockchain",
-  description: "KalyChain is a modern enterprise-grade blockchain platform that enables businesses to build, deploy, and scale blockchain applications with ease.",
+  title: "Kalychain – The Blockchain for Payments, DeFi & Enterprises",
+  description: "Fast, secure, compliant. The trusted infrastructure bridging blockchain and real‑world finance. Purpose‑built for payments, regulated DeFi, and Real‑World Asset (RWA) tokenization.",
 };
 
 export default function RootLayout({
