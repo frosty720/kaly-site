@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { PriceTicker } from "@/components/PriceTicker";
-import { ArrowRight, BarChart3, Shield, Zap, AlertCircle } from "lucide-react";
+import { ChevronDown, BarChart3, Shield, Zap, AlertCircle } from "lucide-react";
 import { WhyKalychainSection } from "@/components/home/why-kalychain-section";
 import { UtilityPillarsSection } from "@/components/home/utility-pillars-section";
 import { KlcTokenSection } from "@/components/home/klc-token-section";
@@ -14,6 +14,12 @@ import { CommunitySection } from "@/components/home/community-section";
 import { KalyPaySection } from "@/components/home/kalypay-section";
 import { AddToWalletButton } from "@/components/wallet/AddToWalletButton";
 import Image from "next/image";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Page() {
   return (
@@ -21,8 +27,8 @@ export default function Page() {
       {/* Navigation */}
       <header className="container mx-auto py-6 px-4 flex justify-between items-center sticky top-0 z-50 bg-black/80 backdrop-blur-sm">
         <div className="flex items-center gap-2">
-          <a 
-            href="#" 
+          <a
+            href="#"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -109,15 +115,28 @@ export default function Page() {
               Fast, secure, compliant. The trusted infrastructure bridging blockchain and real‑world finance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Button
-                size="lg"
-                className="bg-amber-500 text-black hover:bg-amber-600 hover-lift border-none"
-                asChild
-              >
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  🔘 Read the Whitepaper <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    size="lg"
+                    className="bg-amber-500 text-black hover:bg-amber-600 hover-lift border-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                  >
+                    🔘 Read the Whitepaper <ChevronDown className="ml-2 h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-black/90 border-amber-500/50 text-white min-w-[200px]">
+                  <DropdownMenuItem className="focus:bg-amber-500 focus:text-black cursor-pointer" asChild>
+                    <a href="/whitepaper-en.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center w-full">
+                      🇬🇧 English Version
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="focus:bg-amber-500 focus:text-black cursor-pointer" asChild>
+                    <a href="/whitepaper-fr.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center w-full">
+                      🇫🇷 Version Française
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button
                 size="lg"
                 variant="outline"
