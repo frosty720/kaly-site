@@ -15,7 +15,12 @@ const roadmapPhases = [
       "DAO v1 & first on‑chain proposals",
       "Launch Kalypay & KalyScan",
       "First DEX listing + CMC/CG registration",
-      "Initial developer grants"
+      "Initial developer grants",
+      "KalyOS development (LineageOS fork)",
+      "KalyPhone prototype development",
+      "KalyDrive decentralized storage MVP",
+      "KalyNode Tier 1/2/3 gateway infrastructure",
+      "KalyPhone & KalyOS community beta launch"
     ],
     icon: Rocket,
     status: "active",
@@ -24,13 +29,16 @@ const roadmapPhases = [
   {
     phase: "Mid Term (2026–2027)",
     items: [
+      "KalyPhone global launch",
       "Regional expansion (Africa, Asia, LATAM)",
       "SME adoption (POS, fiat ramps, supply chain)",
       "Stablecoin KUSD & real‑world asset tokenization",
       "Banking partnerships & government pilots",
       "KalySwap V3 with updated contracts & security",
       "Tokenization of mining logistics",
-      "KalyGuard WaaS (Wallet‑as‑a‑Service)"
+      "KalyGuard WaaS (Wallet‑as‑a‑Service)",
+      "KalyDrive production deployment",
+      "KalyNode network scaling worldwide"
     ],
     icon: TrendingUp,
     status: "upcoming",
@@ -53,7 +61,9 @@ const roadmapPhases = [
       "Kalychain Layer 2 for enterprise scalability",
       "Mass adoption by SMEs & governments",
       "Government‑to‑Citizen (G2C) payments",
-      "Global leadership in real‑world finance blockchain"
+      "Global leadership in real‑world finance blockchain",
+      "KalyPhone as default sovereign device for crypto users",
+      "Decentralized mesh network as critical infrastructure"
     ],
     icon: University,
     status: "planned",
