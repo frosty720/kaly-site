@@ -34,6 +34,9 @@ const roadmapPhases = [
       "SME adoption (POS, fiat ramps, supply chain)",
       "Stablecoin KUSD & real‑world asset tokenization",
       "Banking partnerships & government pilots",
+      "KalySwap V3 with updated contracts & security",
+      "Tokenization of mining logistics",
+      "KalyGuard WaaS (Wallet‑as‑a‑Service)",
       "KalyDrive production deployment",
       "KalyNode network scaling worldwide"
     ],
@@ -42,7 +45,18 @@ const roadmapPhases = [
     color: "bg-blue-500/20 text-blue-400 ring-blue-500/30"
   },
   {
-    phase: "Long Term (2028–2029)",
+    phase: "Mid Term (2028–2029)",
+    items: [
+      "Zuri — secure private chat application",
+      "Kalychain Layer 2 research & prototyping",
+      "Advanced cross‑chain interoperability"
+    ],
+    icon: Scale,
+    status: "upcoming",
+    color: "bg-blue-500/20 text-blue-400 ring-blue-500/30"
+  },
+  {
+    phase: "Long Term (2030–2033)",
     items: [
       "Kalychain Layer 2 for enterprise scalability",
       "Mass adoption by SMEs & governments",
