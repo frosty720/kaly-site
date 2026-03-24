@@ -22,14 +22,28 @@ const roadmapPhases = [
     color: "bg-amber-500/20 text-amber-400 ring-amber-500/30"
   },
   {
-    phase: "Mid Term (2026–2029)",
+    phase: "Mid Term (2026–2027)",
     items: [
       "Regional expansion (Africa, Asia, LATAM)",
       "SME adoption (POS, fiat ramps, supply chain)",
       "Stablecoin KUSD & real‑world asset tokenization",
-      "Banking partnerships & government pilots"
+      "Banking partnerships & government pilots",
+      "KalySwap V3 with updated contracts & security",
+      "Tokenization of mining logistics",
+      "KalyGuard WaaS (Wallet‑as‑a‑Service)"
     ],
     icon: TrendingUp,
+    status: "upcoming",
+    color: "bg-blue-500/20 text-blue-400 ring-blue-500/30"
+  },
+  {
+    phase: "Mid Term (2028–2029)",
+    items: [
+      "Zuri — secure private chat application",
+      "Kalychain Layer 2 research & prototyping",
+      "Advanced cross‑chain interoperability"
+    ],
+    icon: Scale,
     status: "upcoming",
     color: "bg-blue-500/20 text-blue-400 ring-blue-500/30"
   },
