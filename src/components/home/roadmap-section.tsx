@@ -20,7 +20,8 @@ const roadmapPhases = [
       "KalyPhone prototype development",
       "KalyDrive decentralized storage MVP",
       "KalyNode Tier 1/2/3 gateway infrastructure",
-      "KalyPhone & KalyOS community beta launch"
+      "KalyPhone & KalyOS community beta launch",
+      "✅ KalyRails ZK Layer 2 launched — delivered ahead of schedule (originally 2028–29 milestone)"
     ],
     icon: Rocket,
     status: "active",
@@ -48,7 +49,6 @@ const roadmapPhases = [
     phase: "Mid Term (2028–2029)",
     items: [
       "Zuri — secure private chat application",
-      "Kalychain Layer 2 research & prototyping",
       "Advanced cross‑chain interoperability"
     ],
     icon: Scale,

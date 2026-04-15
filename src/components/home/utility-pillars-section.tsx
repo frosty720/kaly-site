@@ -1,4 +1,4 @@
-import { CreditCard, Building2, Factory, Vote } from "lucide-react";
+import { CreditCard, Building2, Factory, Vote, Layers } from "lucide-react";
 
 export function UtilityPillarsSection() {
   return (
@@ -9,7 +9,7 @@ export function UtilityPillarsSection() {
             Our Utility Pillars
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Four foundational pillars that power the Kalychain ecosystem, designed for real-world applications and enterprise adoption.
+            Five foundational pillars that power the Kalychain ecosystem, designed for real-world applications and enterprise adoption.
           </p>
         </div>
 
@@ -90,6 +90,33 @@ export function UtilityPillarsSection() {
                 <span className="font-semibold text-amber-400">Kalychain Foundation:</span> neutral legal entity ensuring compliance & global partnerships.
               </p>
             </div>
+          </div>
+
+          {/* KalyRails — ZK Rollups-as-a-Service */}
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover-lift-light lg:col-span-2 lg:max-w-[calc(50%-1rem)] lg:mx-auto">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-16 w-16 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 ring-2 ring-amber-500/30">
+                <Layers className="h-8 w-8" />
+              </div>
+              <div>
+                <span className="text-2xl mb-2 block">🛤️</span>
+                <h3 className="text-xl font-bold text-white">KalyRails: ZK Rollups-as-a-Service</h3>
+              </div>
+            </div>
+            <p className="text-gray-300 mb-4">
+              <span className="font-semibold text-amber-400">KalyRails</span> → private ZK Layer 2 chains for fintechs, mobile money operators, and enterprises. Per‑tenant isolation, zero user‑visible gas, KUSD settlement — powered by open‑source ZK Stack and anchored to KalyChain.
+            </p>
+            <p className="text-gray-400 text-sm mb-4">
+              Purpose‑built rollup infrastructure with cryptographic validity proofs and regulator‑friendly auditability.
+            </p>
+            <a
+              href="https://rails.kalychain.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-semibold text-sm"
+            >
+              Explore KalyRails →
+            </a>
           </div>
         </div>
       </div>
