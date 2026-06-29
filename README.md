@@ -116,8 +116,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Contact
 
 - Website: [kalychain.io](https://kalychain.io)
-- Twitter: [@KalyChain](https://twitter.com/KalyChain)
-- Discord: [KalyChain Community](https://discord.gg/4fDuS3cBJw)
+- Twitter: [@KalyChainEVM](https://x.com/KalyChainEVM)
+- Telegram: [KalyChain](https://t.me/KalyChain)
+- Discord: [KalyChain Community](https://discord.gg/tTe8BmcAks)
 
 ---
 
