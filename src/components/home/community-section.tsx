@@ -164,7 +164,7 @@ export function CommunitySection() {
             {/* Social Media Links */}
             <div className="flex items-center justify-center gap-4">
               <a
-                href="https://discord.gg/4fDuS3cBJw"
+                href="https://discord.gg/tTe8BmcAks"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 transition-all duration-300"
@@ -173,7 +173,7 @@ export function CommunitySection() {
                 <FaDiscord className="h-6 w-6" />
               </a>
               <a
-                href="https://t.me/+yj8Ae9lNXmg1Yzkx"
+                href="https://t.me/KalyChain"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 transition-all duration-300"
@@ -191,7 +191,7 @@ export function CommunitySection() {
                 <FaGithub className="h-6 w-6" />
               </a>
               <a
-                href="https://twitter.com/KalyChain"
+                href="https://x.com/KalyChainEVM"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 transition-all duration-300"
