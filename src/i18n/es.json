@@ -1,0 +1,746 @@
+{
+	"meta": {
+		"title": "KalyChain — La Infraestructura de Confianza para la Economía Real",
+		"description": "KalyChain es una blockchain Layer 1 pública, compatible con EVM y de alto rendimiento: finalidad en menos de 3 segundos, comisiones casi nulas y rieles nativos para pagos, stablecoins (KUSD) y dinero móvil.",
+		"ogTitle": "KalyChain — Blockchain Layer 1 compatible con EVM",
+		"ogDescription": "Finalidad en menos de 3 segundos, comisiones casi nulas, EVM nativa. La capa de liquidación para pagos, stablecoins y dinero móvil. Construye sobre KalyChain."
+	},
+	"nav": {
+		"heritage": "Herencia",
+		"ecosystem": "Ecosistema",
+		"governance": "Gobernanza",
+		"developers": "Desarrolladores",
+		"kalybot": "KalyBot IA",
+		"roadmap": "Roadmap",
+		"audiences": "¿Para quién?"
+	},
+	"hero": {
+		"badgeBuilt": "BUILT IN AFRICA · FOR THE WORLD",
+		"badgeCarbon": "CARBON NEUTRAL BLOCKCHAIN",
+		"titleA": "La Infraestructura",
+		"titleB": "de",
+		"titleGradient": "Confianza",
+		"tagline": "Para quienes rechazan los sistemas impuestos.",
+		"subTagline": "Inspirada en 5000 años de innovación en sistemas descentralizados.",
+		"body": "La humanidad siempre ha construido alternativas a los sistemas centralizados. De las pirámides de Kemet a las tontinas africanas, del oro Ashanti al Bitcoin. KalyChain es la siguiente evolución.",
+		"ctaEcosystem": "Explorar el Ecosistema",
+		"ctaManifesto": "Leer el Manifiesto",
+		"stats": {
+			"blocks": "BLOQUES PRODUCIDOS",
+			"transactions": "TRANSACCIONES TOTALES",
+			"addresses": "DIRECCIONES ÚNICAS",
+			"years": "AÑOS EN PRODUCCIÓN",
+			"blockTime": "TIEMPO MEDIO DE BLOQUE",
+			"vaults": "VAULTS EMITIDOS"
+		}
+	},
+	"problem": {
+		"kicker": "EL PROBLEMA",
+		"titleA": "Los Sistemas Que",
+		"titleB": "Te",
+		"titleGradient": "Imponen",
+		"lead": "Sistemas financieros y tecnológicos diseñados en otro lugar. Para otros. Con sus reglas. Un problema global.",
+		"noteA": "Ya sea que estés en Lagos, Buenos Aires, Manila o París, el problema es el mismo:",
+		"noteB": "deciden por ti.",
+		"cards": [
+			{
+				"title": "Exclusión financiera",
+				"body": "1.400 millones de personas sin cuenta bancaria. África, LATAM, Sudeste Asiático."
+			},
+			{
+				"title": "Comisiones abusivas",
+				"body": "Del 6 al 15% en transferencias internacionales. México → EE. UU., Filipinas → Golfo, África → Europa."
+			},
+			{
+				"title": "Lentitud glacial",
+				"body": "De 3 a 5 días para una transferencia SWIFT. Incluso entre EE. UU. y Europa."
+			},
+			{
+				"title": "Monopolios tecnológicos",
+				"body": "Las Big Tech controlan tus datos. Censura y expulsión de plataformas arbitrarias. También en Occidente."
+			}
+		]
+	},
+	"heritage": {
+		"kicker": "LA REVELACIÓN HISTÓRICA",
+		"titleA": "La Humanidad Siempre Ha Construido",
+		"titleB": "",
+		"titleGradient": "Alternativas",
+		"lead": "Los sistemas descentralizados no son nuevos. Son tan antiguos como la civilización. África los perfeccionó durante 5000 años. Los estamos resucitando.",
+		"items": [
+			{
+				"era": "3200 A. C.",
+				"name": "KEMET",
+				"body": "El primer ledger distribuido monumental. Consenso mediante geometría sagrada."
+			},
+			{
+				"era": "1200",
+				"name": "ASHANTI",
+				"body": "Estandarización descentralizada del valor mediante pesas de oro."
+			},
+			{
+				"era": "1400",
+				"name": "KONGO",
+				"body": "Nzimbu: consenso comunitario sobre la moneda."
+			},
+			{
+				"era": "1500",
+				"name": "TOMBUCTÚ",
+				"body": "Distributed knowledge ledger: prueba y certificación distribuidas."
+			},
+			{
+				"era": "1900",
+				"name": "TONTINAS",
+				"body": "Smart contracts sociales antes de la era digital."
+			},
+			{
+				"era": "2009",
+				"name": "BITCOIN",
+				"body": "Renacimiento digital. La descentralización vuelve a ser mundial."
+			},
+			{
+				"era": "2026",
+				"name": "KALYCHAIN",
+				"body": "La evolución. Construida en África. Para el mundo."
+			}
+		],
+		"quoteA": "La innovación no siempre viene de Silicon Valley. Viene de quienes la",
+		"quoteB": "NECESITAN."
+	},
+	"solution": {
+		"kicker": "LA SOLUCIÓN",
+		"titleA": "KalyChain: La",
+		"titleGradient": "Memoria Recuperada",
+		"lead": "La primera blockchain que no copia. Que recuerda. Pensada para África. Construida para el mundo.",
+		"cards": [
+			{
+				"title": "Velocidad",
+				"items": [
+					"Finalidad < 3 segundos",
+					"10.000+ TPS",
+					"Gas fees < $0.01"
+				]
+			},
+			{
+				"title": "Seguridad",
+				"items": [
+					"Hyperledger Besu",
+					"Consenso híbrido PoA/PoS",
+					"Auditoría de smart contracts con IA"
+				]
+			},
+			{
+				"title": "Cumplimiento",
+				"items": [
+					"ISO 27001 · PCI DSS ready",
+					"Conforme con MiCA",
+					"Cumplimiento regulatorio regional"
+				]
+			}
+		]
+	},
+	"benchmark": {
+		"kicker": "BENCHMARK",
+		"titleA": "Cómo Se Compara KalyChain",
+		"titleB": "con los",
+		"titleGradient": "Líderes Mundiales",
+		"lead": "Velocidad, costos, compatibilidad — e innovaciones que ningún otro L1 posee.",
+		"rows": {
+			"tps": "TPS",
+			"finality": "Finalidad",
+			"gasFees": "Gas Fees",
+			"evm": "Compatible con EVM",
+			"mobileMoney": "Mobile Money Bridge",
+			"aiAgents": "Agentes IA Nativos",
+			"fintechStack": "Stack Fintech B2B",
+			"carbonNeutral": "Carbon Neutral"
+		},
+		"footnoteA": "KalyChain combina la velocidad de Solana, la compatibilidad de Ethereum e innovaciones únicas — Mobile Money, IA nativa, Fintech B2B —",
+		"footnoteB": "que ningún otro L1 posee.",
+		"disclaimer": "Datos comparativos compilados a partir de las especificaciones públicas de cada red — solo a título orientativo."
+	},
+	"ecosystem": {
+		"kicker": "EL ECOSISTEMA COMPLETO",
+		"titleA": "El Único Stack Vertical",
+		"titleGradient": "Completo del Mundo",
+		"lead": "Mientras otros solo construyen una blockchain, nosotros construimos una civilización digital completa.",
+		"cards": [
+			{
+				"tag": "LAYER 1",
+				"title": "KalyChain L1",
+				"body": "Blockchain soberana. La capa de liquidación de todo el ecosistema."
+			},
+			{
+				"tag": "DEFI",
+				"title": "KalySwap",
+				"body": "DEX + Vault NFT + KUSD. La super app DeFi con Mobile Money."
+			},
+			{
+				"tag": "FINTECH B2B",
+				"title": "KALYSSI",
+				"body": "Infraestructura para bancos y Estados. 6 pilares, 20+ países activos."
+			},
+			{
+				"tag": "AI AGENTS",
+				"title": "KalyBot",
+				"body": "150 agentes IA gestionan el ecosistema. Vendidos a clientes, pagados en KUSD."
+			},
+			{
+				"tag": "STABLECOIN",
+				"title": "KUSD",
+				"body": "Stablecoin nativa. El puente Mobile Money ↔ cripto. La moneda de la IA."
+			},
+			{
+				"tag": "BRIDGE",
+				"title": "Mobile Money Bridge",
+				"body": "El primer puente Mobile Money ↔ blockchain. 200M+ usuarios al alcance."
+			}
+		]
+	},
+	"developers": {
+		"kicker": "OPEN SOURCE & DEVELOPER FRIENDLY",
+		"titleA": "Construida por la Comunidad.",
+		"titleB": "Para la",
+		"titleGradient": "Comunidad.",
+		"lead": "Un protocolo 100% abierto, documentado y con herramientas. Todo lo que necesitas para empezar a construir hoy.",
+		"openSource": {
+			"title": "Open Source",
+			"items": [
+				"Código 100% open source (GitHub)",
+				"Auditorías públicas verificables",
+				"Contribuciones bienvenidas"
+			]
+		},
+		"docs": {
+			"title": "Documentación Completa",
+			"items": [
+				"Docs técnicas exhaustivas",
+				"Tutoriales paso a paso",
+				"Referencias de API completas"
+			]
+		},
+		"sdks": {
+			"title": "SDKs Multi-Lenguaje"
+		},
+		"support": {
+			"title": "Soporte para Desarrolladores",
+			"items": [
+				"Discord 24/7 (asistencia KalyBot)",
+				"Office hours semanales",
+				"Programa de bug bounty"
+			]
+		},
+		"cta": "Explore Developer Portal",
+		"ctaSuffix": "· docs.kalychain.io"
+	},
+	"kalybot": {
+		"kicker": "INNOVACIÓN IA · DIFERENCIADOR ÚNICO",
+		"titleA": "La Primera Blockchain",
+		"titleB": "Gestionada por",
+		"titleViolet": "Inteligencia Artificial",
+		"lead": "12 humanos. 150 agentes IA. 1 ecosistema.",
+		"leadB": "No hablamos de IA. La practicamos.",
+		"stats": [
+			{
+				"label": "Operaciones automatizadas"
+			},
+			{
+				"label": "Más rápido"
+			},
+			{
+				"label": "Menos costos"
+			}
+		],
+		"cta": "Despliega Tus Propios Agentes IA",
+		"active": "ACTIVO",
+		"agents": [
+			{
+				"name": "Smart Contract Developer AI",
+				"desc": "Desarrolla y audita el código on-chain"
+			},
+			{
+				"name": "Community Manager AI",
+				"desc": "Gestiona Discord y X 24/7"
+			},
+			{
+				"name": "Compliance Monitor AI",
+				"desc": "Vigilancia regulatoria multi-país"
+			},
+			{
+				"name": "Market Maker AI",
+				"desc": "Liquidez automática en KalySwap"
+			}
+		]
+	},
+	"synergy": {
+		"kicker": "VENTAJA ESTRATÉGICA",
+		"titleA": "Dos Redes. Una Sinergia.",
+		"titleGradient": "Una Ventaja Insuperable.",
+		"left": {
+			"tag": "B2C · DeFi",
+			"title": "KalyChain / KalySwap",
+			"items": [
+				"Más usuarios",
+				"Más liquidez",
+				"Más desarrolladores",
+				"Más dApps"
+			]
+		},
+		"center": {
+			"title": "KalyBot",
+			"bodyA": "El puente entre las dos redes. Cada crédito pagado en",
+			"bodyB": "alimenta la adopción.",
+			"quote": "Imposible de copiar. Habría que construir ambas al mismo tiempo. Llevamos 18-24 meses de ventaja."
+		},
+		"right": {
+			"tag": "B2B · Fintech",
+			"title": "KALYSSI",
+			"items": [
+				"Más clientes",
+				"Más transacciones on-chain",
+				"Más TVL",
+				"Más credibilidad"
+			]
+		}
+	},
+	"governance": {
+		"badge": "DESCENTRALIZACIÓN PROGRESIVA",
+		"titleA": "Gobernada por",
+		"titleGradient": "la Comunidad",
+		"lead": "KalyChain es una blockchain pública. Su futuro lo deciden quienes la usan, la construyen y creen en ella.",
+		"stats": {
+			"treasury": "Tesorería DAO",
+			"treasuryUnit": "KLC",
+			"votingPower": "Poder de Voto",
+			"votingPowerUnit": "gKLC",
+			"proposals": "Propuestas",
+			"proposalsUnit": "Activas",
+			"quorum": "Quórum",
+			"quorumUnit": "Mínimo"
+		},
+		"decisionsTitle": "Últimas Decisiones de la Comunidad",
+		"kips": [
+			{
+				"code": "KIP001",
+				"status": "PASSED",
+				"title": "Governance Parameters V1",
+				"body": "Establecimiento de los parámetros de gobernanza iniciales: quórum del 4%, periodo de votación de 7 días.",
+				"result": "Aprobada con el 100%"
+			},
+			{
+				"code": "KIP002",
+				"status": "PASSED",
+				"title": "Regional Stablecoins Deployment",
+				"body": "Despliegue de stablecoins indexadas a divisas regionales para facilitar la adopción local.",
+				"result": "Aprobada con el 100%"
+			},
+			{
+				"code": "KIP003",
+				"status": "EN CURSO",
+				"title": "KalySwap V4 Migration",
+				"body": "Migración de KalySwap a V4 con arquitectura Vault NFT y modelo POL.",
+				"result": "Votación en curso"
+			}
+		],
+		"howTitle": "¿Cómo Participar en la Gobernanza?",
+		"steps": [
+			{
+				"title": "Consigue gKLC",
+				"body": "Convierte tus KLC en tokens de gobernanza (gKLC) para obtener poder de voto."
+			},
+			{
+				"title": "Vota o Propón",
+				"body": "Participa en las votaciones de propuestas existentes o crea las tuyas (mínimo 100k gKLC)."
+			},
+			{
+				"title": "Da Forma al Futuro",
+				"body": "Tus decisiones definen la roadmap, las actualizaciones y la asignación de la tesorería DAO."
+			}
+		],
+		"cta": "Acceder a la DAO",
+		"ctaSub": "dao.kalychain.io"
+	},
+	"traction": {
+		"kicker": "TRACCIÓN",
+		"titleA": "Ya en Producción.",
+		"titleGradient": "Ya Adoptada.",
+		"topStats": {
+			"blocks": "Bloques producidos",
+			"transactions": "Transacciones totales",
+			"addresses": "Direcciones únicas",
+			"years": "Años en producción",
+			"blockTime": "Tiempo medio de bloque"
+		},
+		"network": {
+			"title": "RED",
+			"blockTime": "Tiempo Medio de Bloque",
+			"latestBlock": "Último Bloque",
+			"gasPrice": "Precio Medio del Gas",
+			"txToday": "Transacciones Hoy"
+		},
+		"vaults": {
+			"title": "VAULTS & POL",
+			"minted": "Vaults Emitidos",
+			"positions": "Posiciones LP (POL)",
+			"reserve": "Reserva POL",
+			"klcPrice": "Precio KLC (DEX)"
+		},
+		"projects": {
+			"title": "PRODUCTOS LIVE",
+			"live": "LIVE"
+		},
+		"liveNote": "Todas las cifras de esta sección se leen en directo desde la cadena y KalyScan.",
+		"testimonials": [
+			{
+				"quote": "«KalyChain nos permitió desplegar una pasarela de pago instantáneo en 3 semanas, donde antes necesitábamos 8 meses.»",
+				"initials": "BF",
+				"role": "Director de Innovación",
+				"location": "Banco regional · UEMOA"
+			},
+			{
+				"quote": "«El puente Mobile Money lo cambia todo. Nuestros usuarios pasan del efectivo a DeFi sin siquiera saber que usan una blockchain.»",
+				"initials": "AK",
+				"role": "Fundador Fintech",
+				"location": "Abiyán · Costa de Marfil"
+			},
+			{
+				"quote": "«Construir sobre KalyChain es tener un equipo de agentes IA a mi lado. Programo una dApp completa en un fin de semana.»",
+				"initials": "MD",
+				"role": "Desarrolladora Web3",
+				"location": "Dakar · Senegal"
+			}
+		]
+	},
+	"roadmap": {
+		"kicker": "HOJA DE RUTA",
+		"titleA": "El Camino Hacia",
+		"titleGradient": "$5B TVL",
+		"progress": "Progreso",
+		"tvlTarget": "TVL objetivo",
+		"inProgress": "EN CURSO",
+		"phases": [
+			{
+				"version": "V4",
+				"period": "Sep — Dic 2026 · Foundation",
+				"items": [
+					"KalySwap V4 (DEX)",
+					"Vault NFT (modelo POL)",
+					"KalyBot Fase 1 (50 agentes)"
+				]
+			},
+			{
+				"version": "V5",
+				"period": "Ene — Jun 2027 · Adopción",
+				"items": [
+					"KUSD Stablecoin pública",
+					"Mobile Money Bridge live",
+					"KalyBot público (venta B2B)",
+					"KalyID · Identidad descentralizada",
+					"KalyScoring · Credit scoring con IA"
+				]
+			},
+			{
+				"version": "V6",
+				"period": "Jul — Dic 2027 · Dominación",
+				"items": [
+					"Lending & Borrowing",
+					"Perpetual Trading",
+					"RWA tokenizados · LATAM y Asia",
+					"KalyVery · Verificación descentralizada"
+				]
+			},
+			{
+				"version": "V7",
+				"period": "2028 — 2030 · Global",
+				"items": [
+					"500K usuarios",
+					"Liderazgo africano consolidado",
+					"Expansión mundial"
+				]
+			}
+		]
+	},
+	"grants": {
+		"kicker": "GRANTS & INCENTIVES",
+		"titleA": "Construye Con Nosotros.",
+		"titleB": "Financiamos",
+		"titleGradient": "Tu Visión.",
+		"lead": "Programas concretos para recompensar a quienes construyen el Renacimiento — capital, competiciones y seguridad.",
+		"grantCard": {
+			"title": "KalyChain Grants",
+			"body": "Hasta $100K por proyecto. Enfoque en DeFi, Infraestructura, Mobile-First. Solicitudes abiertas todo el año.",
+			"tags": [
+				"DeFi",
+				"Infra",
+				"Mobile-First"
+			],
+			"cta": "Apply for Grant"
+		},
+		"hackathonCard": {
+			"title": "Hackathons Trimestrales",
+			"body": "$50K en premios por hackathon, 4 veces al año. Temas: DeFi, Gaming, RWA, IA. Mentores KalyBot incluidos.",
+			"next": "Próximo:",
+			"nextValue": "Q1 2027",
+			"cta": "Unirse al Hackathon"
+		},
+		"bountyCard": {
+			"title": "Bug Bounty Program",
+			"body": "Hasta $50K por vulnerabilidad crítica. Smart contracts, infraestructura, seguridad. Auditorías continuas de KalyBot.",
+			"active": "Programa activo 24/7",
+			"cta": "Report a Bug"
+		},
+		"story": {
+			"kicker": "SUCCESS STORY",
+			"badge": "GRANT · $80K",
+			"quote": "«Con el grant de KalyChain y el apoyo de los agentes KalyBot, lanzamos nuestra pasarela de yield en 6 semanas. Hoy gestiona más de $12M en depósitos.»",
+			"initials": "YF",
+			"role": "Equipo fundador · Yield Protocol",
+			"location": "Ganador de KalyChain Grants · Cohorte 2026",
+			"disclaimer": "Ejemplo ilustrativo del recorrido de un ganador — los primeros grants oficiales se anunciarán cuando se abra el programa."
+		}
+	},
+	"audiences": {
+		"kicker": "¿PARA QUIÉN?",
+		"titleA": "Únete al",
+		"titleGradient": "Renacimiento",
+		"titleB": ". Estés Donde Estés.",
+		"cards": [
+			{
+				"title": "Builders",
+				"tag": "DESARROLLADORES DE TODO EL MUNDO",
+				"body": "Construye la próxima generación de apps. Grants, soporte KalyBot, docs completas.",
+				"cta": "Start Building"
+			},
+			{
+				"title": "Traders",
+				"tag": "NIGERIA · ARGENTINA · VIETNAM · KENIA",
+				"body": "DEX rápido, Vault NFT, KUSD estable. Cero comisiones ocultas en mercados emergentes.",
+				"cta": "Launch App"
+			},
+			{
+				"title": "Instituciones",
+				"tag": "BANCOS · FINTECHS · GOBIERNOS",
+				"body": "Infraestructura KALYSSI. 20+ países (África, MENA, LATAM en expansión). PCI DSS y MiCA.",
+				"cta": "Hablemos"
+			},
+			{
+				"title": "Remesas",
+				"tag": "DIÁSPORA GLOBAL",
+				"body": "Filipinas → Dubái, México → EE. UU., Senegal → Francia. Mobile Money Bridge, <1% de comisión, <3s.",
+				"cta": "Envía Dinero"
+			},
+			{
+				"title": "Comunidad",
+				"tag": "DAO GLOBAL",
+				"body": "Participa en la gobernanza. Propón. Vota. Recompensas por participación.",
+				"cta": "Join Governance"
+			},
+			{
+				"title": "Mobile-First",
+				"tag": "GLOBAL SOUTH",
+				"body": "2 mil millones de smartphones. Cero bancos. África, Asia, LATAM. Mobile Money → cripto directo.",
+				"cta": "Get Started Mobile"
+			}
+		]
+	},
+	"manifesto": {
+		"kicker": "EL LLAMADO UNIVERSAL",
+		"titleA": "Para Quienes Rechazan",
+		"titleB": "Los",
+		"titleGradient": "Sistemas Impuestos",
+		"lines": [
+			[
+				"¿Eres ",
+				"africano",
+				" y estás harto del 15% de comisión de las empresas de remesas?"
+			],
+			[
+				"¿Eres ",
+				"latinoamericano",
+				" y sufres la hiperinflación?"
+			],
+			[
+				"¿Eres ",
+				"asiático",
+				" y buscas mobile-first sin intermediarios?"
+			],
+			[
+				"¿Eres ",
+				"europeo",
+				" y quieres soberanía frente a las Big Tech?"
+			],
+			[
+				"¿Eres ",
+				"estadounidense",
+				" y estás cansado de la censura de las plataformas?"
+			]
+		],
+		"punch": "KalyChain no es «una blockchain africana».",
+		"bodyA": "Es la infraestructura",
+		"bodyGoldA": "construida EN África",
+		"bodyB": "(donde la necesidad es más urgente), inspirada en 5000 años de innovación en sistemas descentralizados,",
+		"bodyGoldB": "disponible PARA el mundo entero",
+		"bodyC": ".",
+		"footer": "Porque el derecho a la soberanía financiera y digital no tiene fronteras.",
+		"cta": "Únete al Renacimiento",
+		"tagline": "No importa de dónde vengas."
+	},
+	"security": {
+		"kicker": "SEGURIDAD",
+		"titleA": "Seguridad de",
+		"titleGradient": "Clase Mundial",
+		"lead": "La confianza no se decreta, se demuestra. Auditorías, cumplimiento y descentralización progresiva.",
+		"cards": [
+			{
+				"title": "Auditorías de Smart Contracts",
+				"items": [
+					"Auditorías continuas automatizadas (KalyBot)",
+					"Alianzas con firmas externas (CertiK, Hacken)",
+					"Programa de bug bounty activo"
+				]
+			},
+			{
+				"title": "Cumplimiento Regulatorio",
+				"items": [
+					"Conforme con ISO 27001",
+					"PCI DSS ready",
+					"Conforme con MiCA (Europa)",
+					"Cumplimiento regulatorio regional"
+				]
+			},
+			{
+				"title": "Descentralización Progresiva",
+				"items": [
+					"Roadmap hacia la descentralización total",
+					"Gobernanza DAO activa",
+					"Propuestas y votos de la comunidad"
+				]
+			}
+		],
+		"badges": [
+			"ISO 27001",
+			"PCI DSS",
+			"MiCA",
+			"Reguladores africanos"
+		]
+	},
+	"sustainability": {
+		"badge": "CARBON NEUTRAL · CERTIFICADO",
+		"titleA": "Construir el Futuro",
+		"titleGradient": "Sin Quemar el Planeta.",
+		"lead": "KalyChain funciona con un consenso híbrido PoA/PoS — sin minería devoradora de energía. Una blockchain de nivel mundial con la huella de carbono de un sitio web.",
+		"stats": [
+			{
+				"label": "menos energía que una blockchain Proof-of-Work"
+			},
+			{
+				"label": "de las emisiones residuales compensadas cada año"
+			},
+			{
+				"label": "por transacción · vs ~700 kWh en Bitcoin"
+			},
+			{
+				"label": "de las comisiones del protocolo destinadas a proyectos ambientales africanos"
+			}
+		],
+		"commitTitle": "Nuestros Compromisos Concretos",
+		"commitments": [
+			{
+				"title": "Consenso híbrido PoA/PoS",
+				"body": "Cero minería. Los validadores aseguran la red con un consumo eléctrico mínimo — el equivalente a unos pocos servidores."
+			},
+			{
+				"title": "Compensación de carbono verificada",
+				"badge": "EN NEGOCIACIÓN",
+				"body": "Alianza de compensación con un operador certificado para neutralizar el 100% de la huella residual de la red."
+			},
+			{
+				"title": "Fondo Renacimiento Verde",
+				"body": "El 1% de las comisiones del protocolo financia reforestación y energías limpias en África Occidental — la tesorería DAO asigna cada trimestre."
+			}
+		],
+		"goal": {
+			"kicker": "OBJETIVO 2028",
+			"textA": "Convertirse en el primer L1",
+			"highlight": "carbono-negativo",
+			"textB": "nacido en África."
+		}
+	},
+	"footer": {
+		"quickCards": [
+			{
+				"title": "Whitepaper",
+				"sub": "Visión y tokenomics"
+			},
+			{
+				"title": "Developer Docs",
+				"sub": "SDKs y refs de API"
+			},
+			{
+				"title": "Explorer",
+				"sub": "Explorador de blockchain"
+			},
+			{
+				"title": "Bridge",
+				"sub": "Transferencias cross-chain"
+			}
+		],
+		"blurb": "El renacimiento digital de 5000 años de innovación africana en sistemas de confianza.",
+		"columns": {
+			"ecosystem": {
+				"title": "ECOSISTEMA",
+				"links": {
+					"kalyswap": "KalySwap (DEX)",
+					"vaults": "Kaly Vaults",
+					"bridge": "Bridge",
+					"dao": "KalyDAO",
+					"kalypay": "KalyPay",
+					"explorer": "KalyScan",
+					"rails": "KalyRails"
+				}
+			},
+			"resources": {
+				"title": "RECURSOS",
+				"links": {
+					"docs": "Documentación",
+					"whitepaper": "Whitepaper",
+					"github": "GitHub",
+					"chainlist": "Chainlist",
+					"roadmap": "Roadmap"
+				}
+			},
+			"community": {
+				"title": "COMUNIDAD",
+				"links": {
+					"discord": "Discord",
+					"twitter": "Twitter / X",
+					"telegram": "Telegram",
+					"governance": "Foro de Gobernanza"
+				}
+			},
+			"audiences": {
+				"title": "¿PARA QUIÉN?",
+				"links": {
+					"builders": "Builders",
+					"institutions": "Instituciones",
+					"traders": "Traders",
+					"community": "Comunidad"
+				}
+			}
+		},
+		"presence": {
+			"kicker": "PRESENCIA MUNDIAL",
+			"africa": "África",
+			"africaBadge": "HOME",
+			"latam": "LATAM",
+			"latamBadge": "EXPANDING",
+			"asia": "Asia",
+			"asiaBadge": "ROADMAP",
+			"europe": "Europa",
+			"europeBadge": "MiCA READY"
+		},
+		"copyright": "© 2026 KalyChain Foundation",
+		"disclaimer": "Los criptoactivos son volátiles y conllevan riesgos. Esto no constituye asesoramiento financiero."
+	},
+	"floatBtn": "Read Whitepaper"
+}

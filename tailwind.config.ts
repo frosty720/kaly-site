@@ -20,11 +20,12 @@ const config = {
     fontFamily: {
       sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
       display: [
-        "var(--font-cabinet-grotesk)",
-        "CabinetGrotesk",
+        "var(--font-space-grotesk)",
+        "Space Grotesk",
         "system-ui",
         "sans-serif",
       ],
+      "serif-k": ["var(--font-fraunces)", "Fraunces", "Georgia", "serif"],
       mono: ["var(--font-jetbrains-mono)", "JetBrains Mono", "monospace"],
     },
     extend: {
@@ -91,6 +92,19 @@ const config = {
             light: "#93C5FD", // Light blue for accents
             dark: "#1E40AF", // Dark blue for hover states
           },
+        },
+        // Landing palette — brand gold (kusd-ui/kaly-site) on near-black
+        ink: "#0A0A0A",
+        surface: "#141414",
+        surfacealt: "#1A1A1A",
+        cream: "#F5F0E6",
+        gold: {
+          DEFAULT: "#F59E0B",
+          dark: "#D97706",
+        },
+        goldbright: "#F7931A",
+        violet: {
+          DEFAULT: "#8B5CF6",
         },
       },
       backgroundImage: {
