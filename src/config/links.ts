@@ -7,7 +7,7 @@
 export const links = {
 	social: {
 		telegram: 'https://t.me/KalyChainEVM',
-		discord: 'https://discord.gg/p4Gz7K8U',
+		discord: 'https://discord.gg/cGSmTHRXWP',
 		twitter: 'https://x.com/KalyChainEVM',
 		github: 'https://github.com/KalyCoinProject',
 	},

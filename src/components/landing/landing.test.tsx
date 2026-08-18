@@ -135,7 +135,7 @@ describe('Footer', () => {
 		const { container } = render(<Footer t={en.footer} locale='en' />);
 		const hrefs = allHrefs(container);
 		expect(hrefs).toContain('https://t.me/KalyChainEVM');
-		expect(hrefs).toContain('https://discord.gg/p4Gz7K8U');
+		expect(hrefs).toContain('https://discord.gg/cGSmTHRXWP');
 		expect(hrefs).toContain('https://x.com/KalyChainEVM');
 		expect(hrefs).toContain('https://github.com/KalyCoinProject');
 	});
