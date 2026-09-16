@@ -12,27 +12,27 @@ import { Traction } from './traction';
 const en = getDictionary('en');
 const fr = getDictionary('fr');
 const live: LiveStats = {
-	treasuryKlc: '511M',
-	votingPowerGklc: '235M',
+	treasuryKmt: '8.1M',
+	votingPowerGkmt: '2.4M',
 	avgBlockTime: '2s',
-	totalBlocks: '53.1M+',
-	totalTransactions: '3.2M+',
-	totalAddresses: '7.5K+',
-	transactionsToday: '7,210',
+	totalBlocks: '1.1M+',
+	totalTransactions: '46.3K+',
+	totalAddresses: '610',
+	transactionsToday: '7,540',
 	yearsLive: '3+',
-	latestBlockNumber: 53117466,
+	latestBlockNumber: 1121012,
 	gasPrice: '20 gwei',
-	vaultsMinted: '147',
-	polPositions: '147',
-	polReserve: '13.5M KLC',
-	klcPrice: '$0.002263',
+	vaultsMinted: '115',
+	polPositions: '12',
+	polReserve: '131,396 KMT',
+	kmtPrice: '$0.2041',
 	heroCounters: {
-		blocks: { target: 53.1, decimals: 1, prefix: '', suffix: 'M+' },
-		transactions: { target: 3.2, decimals: 1, prefix: '', suffix: 'M+' },
-		addresses: { target: 7.5, decimals: 1, prefix: '', suffix: 'K+' },
+		blocks: { target: 1.1, decimals: 1, prefix: '', suffix: 'M+' },
+		transactions: { target: 46.3, decimals: 1, prefix: '', suffix: 'K+' },
+		addresses: { target: 610, decimals: 0, prefix: '', suffix: '' },
 		years: { target: 3, decimals: 0, prefix: '', suffix: '+' },
 		blockTime: { target: 2, decimals: 0, prefix: '', suffix: 's' },
-		vaults: { target: 147, decimals: 0, prefix: '', suffix: '' },
+		vaults: { target: 115, decimals: 0, prefix: '', suffix: '' },
 	},
 };
 
@@ -67,8 +67,8 @@ describe('Hero', () => {
 		expect(screen.getByText(en.hero.titleGradient)).toBeTruthy();
 		expect(screen.getByText(en.hero.stats.blocks)).toBeTruthy();
 		expect(screen.getByText(en.hero.stats.vaults)).toBeTruthy();
-		expect(screen.getByText('53.1M+')).toBeTruthy();
-		expect(screen.getByText('147')).toBeTruthy();
+		expect(screen.getByText('1.1M+')).toBeTruthy();
+		expect(screen.getByText('115')).toBeTruthy();
 		// the fabricated claims are gone
 		expect(screen.queryByText(/\$1\.2B/)).toBeNull();
 		expect(screen.queryByText('99.9%')).toBeNull();
@@ -77,10 +77,13 @@ describe('Hero', () => {
 });
 
 describe('Governance', () => {
-	it('shows the live on-chain treasury and voting power values', () => {
-		render(<Governance t={en.governance} live={live} />);
-		expect(screen.getByText('511M')).toBeTruthy();
-		expect(screen.getByText('235M')).toBeTruthy();
+	it('shows the live on-chain treasury and voting power values in KMT / gKMT', () => {
+		const { container } = render(<Governance t={en.governance} live={live} />);
+		expect(screen.getByText('8.1M')).toBeTruthy();
+		expect(screen.getByText('2.4M')).toBeTruthy();
+		expect(screen.getByText('KMT')).toBeTruthy();
+		expect(screen.getByText('gKMT')).toBeTruthy();
+		expect(container.textContent).not.toMatch(/\bg?KLC\b/);
 	});
 
 	it('links the DAO CTA to dao.kalychain.io', () => {
@@ -92,10 +95,10 @@ describe('Governance', () => {
 describe('Traction', () => {
 	it('renders only live chain figures — blocks, addresses, block time, ticking latest block', () => {
 		render(<Traction t={en.traction} live={live} />);
-		expect(screen.getByText('53.1M+')).toBeTruthy();
-		expect(screen.getByText('7.5K+')).toBeTruthy();
+		expect(screen.getByText('1.1M+')).toBeTruthy();
+		expect(screen.getByText('610')).toBeTruthy();
 		expect(screen.getAllByText('2s').length).toBeGreaterThan(0);
-		expect(screen.getByText('#53,117,466')).toBeTruthy();
+		expect(screen.getByText('#1,121,012')).toBeTruthy();
 		// none of the fabricated figures survive, and the weak validator count is gone
 		expect(screen.queryByText('$1.2B')).toBeNull();
 		expect(screen.queryByText('480K')).toBeNull();
@@ -103,12 +106,15 @@ describe('Traction', () => {
 		expect(screen.queryByText(en.traction.network.title && 'Active Validators')).toBeNull();
 	});
 
-	it('renders the vaults & POL panel from on-chain data', () => {
-		render(<Traction t={en.traction} live={live} />);
+	it('renders the vaults & POL panel from on-chain data in KMT', () => {
+		const { container } = render(<Traction t={en.traction} live={live} />);
 		expect(screen.getByText(en.traction.vaults.title)).toBeTruthy();
-		expect(screen.getAllByText('147').length).toBe(2);
-		expect(screen.getByText('13.5M KLC')).toBeTruthy();
-		expect(screen.getByText('$0.002263')).toBeTruthy();
+		expect(screen.getByText('115')).toBeTruthy();
+		expect(screen.getByText('12')).toBeTruthy();
+		expect(screen.getByText('131,396 KMT')).toBeTruthy();
+		expect(screen.getByText('KMT Price (DEX)')).toBeTruthy();
+		expect(screen.getByText('$0.2041')).toBeTruthy();
+		expect(container.textContent).not.toMatch(/\bg?KLC\b/);
 	});
 
 	it('lists Kaly Vaults instead of KalyScan in live products', () => {
@@ -151,7 +157,6 @@ describe('Footer', () => {
 			links.ecosystem.explorer,
 			links.ecosystem.rails,
 			links.ecosystem.docs,
-			links.ecosystem.chainlist,
 		]) {
 			expect(hrefs).toContain(href);
 		}

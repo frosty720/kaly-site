@@ -20,6 +20,5 @@ export const links = {
 		explorer: 'https://kalyscan.io',
 		rails: 'https://rails.kalychain.io',
 		docs: 'https://docs.kalychain.io',
-		chainlist: 'https://chainlist.org/chain/3888',
 	},
 } as const;

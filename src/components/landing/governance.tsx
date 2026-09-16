@@ -11,8 +11,8 @@ interface GovernanceProps {
 
 export function Governance({ t, live }: GovernanceProps) {
 	const stats = [
-		{ label: t.stats.treasury, value: live.treasuryKlc, unit: t.stats.treasuryUnit },
-		{ label: t.stats.votingPower, value: live.votingPowerGklc, unit: t.stats.votingPowerUnit },
+		{ label: t.stats.treasury, value: live.treasuryKmt, unit: t.stats.treasuryUnit },
+		{ label: t.stats.votingPower, value: live.votingPowerGkmt, unit: t.stats.votingPowerUnit },
 		{ label: t.stats.proposals, value: claims.governance.activeProposals, unit: t.stats.proposalsUnit },
 		{ label: t.stats.quorum, value: claims.governance.quorum, unit: t.stats.quorumUnit },
 	];

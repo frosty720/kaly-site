@@ -37,7 +37,6 @@ export function Footer({ t, locale }: FooterProps) {
 		{ label: t.columns.resources.links.docs, href: links.ecosystem.docs },
 		{ label: t.columns.resources.links.whitepaper, href: whitepaper },
 		{ label: t.columns.resources.links.github, href: links.social.github },
-		{ label: t.columns.resources.links.chainlist, href: links.ecosystem.chainlist },
 		{ label: t.columns.resources.links.roadmap, href: '#roadmap', internal: true },
 	];
 	const communityLinks = [

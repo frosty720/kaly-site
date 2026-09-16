@@ -3,20 +3,20 @@
  *
  * ⚠️ These values come from the supplied design and are NOT verified on-chain.
  * Anything marked UNVERIFIED must be confirmed (or corrected) before launch.
- * DAO treasury and gKLC supply are fetched live (src/lib/stats.ts) and only
+ * DAO treasury and gKMT supply are fetched live (src/lib/stats.ts) and only
  * fall back to the values here if the RPC is unreachable.
  */
 export const claims = {
 	// Animated hero counters, fed live (KalyScan + chain) — displayed value =
-	// prefix + target + suffix. These are REAL fallback values (2026-08-13)
-	// used only when the APIs are unreachable at render time.
+	// prefix + target + suffix. These are REAL 3890 fallback values (2026-09-16)
+	// used only when the APIs are unreachable at render time. Years in
+	// production is computed from the launch date and needs no fallback.
 	hero: {
-		blocks: { target: 53.1, decimals: 1, prefix: '', suffix: 'M+' },
-		transactions: { target: 3.2, decimals: 1, prefix: '', suffix: 'M+' },
-		addresses: { target: 7.5, decimals: 1, prefix: '', suffix: 'K+' },
-		years: { target: 3, decimals: 0, prefix: '', suffix: '+' },
+		blocks: { target: 1.1, decimals: 1, prefix: '', suffix: 'M+' },
+		transactions: { target: 46.3, decimals: 1, prefix: '', suffix: 'K+' },
+		addresses: { target: 610, decimals: 0, prefix: '', suffix: '' },
 		blockTime: { target: 2, decimals: 0, prefix: '', suffix: 's' },
-		vaults: { target: 147, decimals: 0, prefix: '', suffix: '' },
+		vaults: { target: 115, decimals: 0, prefix: '', suffix: '' },
 	},
 	benchmark: {
 		tps: '10,000+', // UNVERIFIED
@@ -29,25 +29,24 @@ export const claims = {
 		cheaper: '77%', // UNVERIFIED
 	},
 	governance: {
-		treasuryKlc: '511M', // live-fetched fallback
-		votingPowerGklc: '235M', // live-fetched fallback
+		treasuryKmt: '8.1M', // live-fetched fallback
+		votingPowerGkmt: '2.4M', // live-fetched fallback
 		activeProposals: '3', // UNVERIFIED — static, goes stale
 		quorum: '4%',
 	},
-	// Traction section is fully live (KalyScan + RPC). These are REAL values
-	// verified 2026-08-13, used only as fallback when the APIs are unreachable.
+	// Traction section is fully live (KalyScan + 3890 RPC). These are REAL values
+	// verified 2026-09-16, used only as fallback when the APIs are unreachable.
 	traction: {
-		totalBlocks: '53.1M+',
-		totalTransactions: '3.2M+',
-		totalAddresses: '7.5K+',
-		transactionsToday: '7,210',
-		yearsLive: '3+',
+		totalBlocks: '1.1M+',
+		totalTransactions: '46.3K+',
+		totalAddresses: '610',
+		transactionsToday: '7,540',
 		gasPrice: '20 gwei',
 		avgBlockTime: '2s',
-		vaultsMinted: '147',
-		polPositions: '147',
-		polReserve: '13.5M KLC',
-		klcPrice: '$0.002263',
+		vaultsMinted: '115',
+		polPositions: '12',
+		polReserve: '131,396 KMT',
+		kmtPrice: '$0.2041',
 	},
 	roadmap: {
 		v4Progress: 80,

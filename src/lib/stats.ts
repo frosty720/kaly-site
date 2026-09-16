@@ -1,18 +1,22 @@
 import { claims } from './claims';
 
-export const RPC_URL = 'https://rpc.kalychain.io/rpc';
+// KalyChain 3890 (KMT). Addresses from kalychain-ops/files/kmt-3890/addresses.json
+export const RPC_URL = 'https://mainrpc.kalychain.io/rpc';
 const BLOCKSCOUT_API = 'https://kalyscan.io/api/v2';
-const DAO_TREASURY = '0x92564ec0d22BBd5e3FF978B977CA968e6c7d1c44';
-const GKLC_TOKEN = '0x4BA2369743c4249ea3f6777CaF433c76dBBa657a';
-// Vaults v4 mainnet stack (kaly-vault/src/lib/chain/addresses.ts, deployed at block 51187545)
-const VAULT_MANAGER = '0x8ad3aD4a3F20672d39F6F87d6bdf1DF5386ac6A5';
-const POSITION_MANAGER = '0xfa25364Ec856E1C0dd6D14568456C842b288E519';
-const VAULTS_DEPLOY_BLOCK = '0x30d1339'; // 51,187,545
+const DAO_TREASURY = '0xDF8CFefEa7DaA5E5B23c262A461aCcA6356BCA90';
+const GKMT_TOKEN = '0xf05c285340FC6DE9fC1a8F225b553DF21f47aFA8';
+const VAULT_MANAGER = '0xDA2A7a2D504949896e709F546B6Bc06C2E7c5982';
+const POSITION_MANAGER = '0xCa4a8fC696ADAE8edC042cB9E32Cd7F0A28EBdf0';
+const VAULTS_DEPLOY_BLOCK = '0x11e5'; // 4,581
+// KalyChain mainnet launch (block 1 of the original chain); the 3890 relaunch keeps the network's history
+const KALYCHAIN_LAUNCH_MS = Date.UTC(2023, 2, 24);
 const SELECTOR_TOTAL_SUPPLY = '0x18160ddd';
-const SELECTOR_RESERVE_WKLC = '0x3560668b'; // reserveWklc()
-const SELECTOR_KLC_USD_PRICE = '0x20612bc4'; // klcUsdPrice(), USD per KLC scaled 1e18
+const SELECTOR_RESERVE_WKLC = '0x3560668b'; // reserveWklc() — holds WKMT on 3890
+const SELECTOR_KLC_USD_PRICE = '0x20612bc4'; // klcUsdPrice() — USD per KMT on 3890, scaled 1e18
 const SELECTOR_BALANCE_OF = '0x70a08231';
 const TOPIC_PURCHASED = '0x8bd3744e58b8d1d7f64602efebce92a7af051f4b691e56ccb1f8dbaa8709c901'; // Purchased(address,uint256,uint8,address,uint256)
+const TOPIC_MIGRATED = '0x6fe24640fa1cde977a632e6bfbf29f915c3cca23c7746bd15f0975ccf2038400'; // VaultMigrated(uint256,address,uint8)
+const TOPIC_REVOKED = '0x65143c9c8db9ce46388460bbee1d8a9ba68ac5d991af0cc533dbffe7b9b98db6'; // VaultRevoked(uint256,address,uint256)
 const REVALIDATE_SECONDS = 300;
 
 interface RpcResponse<T> {
@@ -75,8 +79,19 @@ function trimZero(s: string): string {
 	return s.replace(/\.0$/, '');
 }
 
-interface RpcBlock {
-	timestamp: string;
+interface RpcLog {
+	topics: string[];
+}
+
+/** Live vaults = bought on 3890 + migrated from 3888 − revoked. */
+function countLiveVaults(logs: RpcLog[]): number {
+	let count = 0;
+	for (const log of logs) {
+		const topic = log.topics?.[0]?.toLowerCase();
+		if (topic === TOPIC_PURCHASED || topic === TOPIC_MIGRATED) count++;
+		else if (topic === TOPIC_REVOKED) count--;
+	}
+	return Math.max(count, 0);
 }
 
 export interface CounterSpec {
@@ -109,10 +124,10 @@ interface BlockscoutStats {
 }
 
 export interface LiveStats {
-	/** DAO treasury balance in KLC, e.g. "511M" */
-	treasuryKlc: string;
-	/** gKLC total supply, e.g. "235M" */
-	votingPowerGklc: string;
+	/** DAO treasury balance in KMT, e.g. "8.1M" */
+	treasuryKmt: string;
+	/** gKMT total supply, e.g. "2.4M" */
+	votingPowerGkmt: string;
 	/** Average block time, e.g. "2s" */
 	avgBlockTime: string;
 	/** Cumulative chain totals from KalyScan */
@@ -120,16 +135,16 @@ export interface LiveStats {
 	totalTransactions: string;
 	totalAddresses: string;
 	transactionsToday: string;
-	/** Full years since block 1 (2023-03-24), e.g. "3+" */
+	/** Full years since KalyChain's launch (2023-03-24), e.g. "3+" */
 	yearsLive: string;
 	/** Latest block height for the client-side ticker; null when the RPC is down */
 	latestBlockNumber: number | null;
 	gasPrice: string;
-	/** Vaults & POL (VaultManager v4 mainnet) */
+	/** Vaults & POL (VaultManager on 3890) */
 	vaultsMinted: string;
 	polPositions: string;
 	polReserve: string;
-	klcPrice: string;
+	kmtPrice: string;
 	/** Animated hero counters derived from the live values above */
 	heroCounters: {
 		blocks: CounterSpec;
@@ -152,23 +167,21 @@ export async function getLiveStats(): Promise<LiveStats> {
 	const [
 		treasuryHex,
 		supplyHex,
-		genesisBlock,
 		stats,
-		purchasedLogs,
+		vaultLogs,
 		polPositionsHex,
 		reserveHex,
-		klcPriceHex,
+		kmtPriceHex,
 	] = await Promise.all([
 		rpcCall<string>('eth_getBalance', [DAO_TREASURY, 'latest']),
-		ethCall(GKLC_TOKEN, SELECTOR_TOTAL_SUPPLY),
-		rpcCall<RpcBlock>('eth_getBlockByNumber', ['0x1', false]),
+		ethCall(GKMT_TOKEN, SELECTOR_TOTAL_SUPPLY),
 		blockscout<BlockscoutStats>('/stats'),
-		rpcCall<unknown[]>('eth_getLogs', [
+		rpcCall<RpcLog[]>('eth_getLogs', [
 			{
 				address: VAULT_MANAGER,
 				fromBlock: VAULTS_DEPLOY_BLOCK,
 				toBlock: 'latest',
-				topics: [TOPIC_PURCHASED],
+				topics: [[TOPIC_PURCHASED, TOPIC_MIGRATED, TOPIC_REVOKED]],
 			},
 		]),
 		balanceOfCall(POSITION_MANAGER, DAO_TREASURY),
@@ -176,24 +189,21 @@ export async function getLiveStats(): Promise<LiveStats> {
 		ethCall(VAULT_MANAGER, SELECTOR_KLC_USD_PRICE),
 	]);
 
-	let yearsLiveNum: number | null = null;
-	if (genesisBlock?.timestamp) {
-		const ageSeconds = Date.now() / 1000 - Number(BigInt(genesisBlock.timestamp));
-		yearsLiveNum = Math.floor(ageSeconds / 31_557_600);
-	}
-	const yearsLive = yearsLiveNum !== null ? `${yearsLiveNum}+` : fallback.yearsLive;
+	const yearsLiveNum = Math.floor((Date.now() - KALYCHAIN_LAUNCH_MS) / 1000 / 31_557_600);
+	const yearsLive = `${yearsLiveNum}+`;
+	const liveVaults = vaultLogs ? countLiveVaults(vaultLogs) : null;
 
-	let klcPrice: string = fallback.klcPrice;
-	if (klcPriceHex) {
-		const usd = Number(BigInt(klcPriceHex)) / 1e18;
-		if (usd > 0) klcPrice = usd >= 0.01 ? `$${usd.toFixed(4)}` : `$${usd.toFixed(6)}`;
+	let kmtPrice: string = fallback.kmtPrice;
+	if (kmtPriceHex) {
+		const usd = Number(BigInt(kmtPriceHex)) / 1e18;
+		if (usd > 0) kmtPrice = usd >= 0.01 ? `$${usd.toFixed(4)}` : `$${usd.toFixed(6)}`;
 	}
 
 	const blockTimeSeconds = stats?.average_block_time ? stats.average_block_time / 1000 : null;
 
 	return {
-		treasuryKlc: treasuryHex ? formatMillions(treasuryHex) : claims.governance.treasuryKlc,
-		votingPowerGklc: supplyHex ? formatMillions(supplyHex) : claims.governance.votingPowerGklc,
+		treasuryKmt: treasuryHex ? formatMillions(treasuryHex) : claims.governance.treasuryKmt,
+		votingPowerGkmt: supplyHex ? formatMillions(supplyHex) : claims.governance.votingPowerGkmt,
 		avgBlockTime: blockTimeSeconds ? `${trimZero(blockTimeSeconds.toFixed(1))}s` : fallback.avgBlockTime,
 		totalBlocks: stats ? formatCompact(Number(stats.total_blocks)) : fallback.totalBlocks,
 		totalTransactions: stats ? formatCompact(Number(stats.total_transactions)) : fallback.totalTransactions,
@@ -204,18 +214,15 @@ export async function getLiveStats(): Promise<LiveStats> {
 		yearsLive,
 		latestBlockNumber: stats ? Number(stats.total_blocks) : null,
 		gasPrice: stats?.gas_prices?.average ? `${stats.gas_prices.average} gwei` : fallback.gasPrice,
-		vaultsMinted: purchasedLogs ? String(purchasedLogs.length) : fallback.vaultsMinted,
+		vaultsMinted: liveVaults !== null ? String(liveVaults) : fallback.vaultsMinted,
 		polPositions: polPositionsHex ? String(Number(BigInt(polPositionsHex))) : fallback.polPositions,
-		polReserve: reserveHex ? `${formatMillions(reserveHex)} KLC` : fallback.polReserve,
-		klcPrice,
+		polReserve: reserveHex ? `${formatMillions(reserveHex)} KMT` : fallback.polReserve,
+		kmtPrice,
 		heroCounters: {
 			blocks: stats ? compactCounter(Number(stats.total_blocks)) : claims.hero.blocks,
 			transactions: stats ? compactCounter(Number(stats.total_transactions)) : claims.hero.transactions,
 			addresses: stats ? compactCounter(Number(stats.total_addresses)) : claims.hero.addresses,
-			years:
-				yearsLiveNum !== null
-					? { target: yearsLiveNum, decimals: 0, prefix: '', suffix: '+' }
-					: claims.hero.years,
+			years: { target: yearsLiveNum, decimals: 0, prefix: '', suffix: '+' },
 			blockTime: blockTimeSeconds
 				? {
 						target: Number(blockTimeSeconds.toFixed(1)),
@@ -224,9 +231,10 @@ export async function getLiveStats(): Promise<LiveStats> {
 						suffix: 's',
 					}
 				: claims.hero.blockTime,
-			vaults: purchasedLogs
-				? { target: purchasedLogs.length, decimals: 0, prefix: '', suffix: '' }
-				: claims.hero.vaults,
+			vaults:
+				liveVaults !== null
+					? { target: liveVaults, decimals: 0, prefix: '', suffix: '' }
+					: claims.hero.vaults,
 		},
 	};
 }

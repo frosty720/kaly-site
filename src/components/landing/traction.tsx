@@ -92,7 +92,7 @@ export function Traction({ t, live }: TractionProps) {
 						<StatRow label={t.vaults.minted} value={live.vaultsMinted} />
 						<StatRow label={t.vaults.positions} value={live.polPositions} />
 						<StatRow label={t.vaults.reserve} value={live.polReserve} />
-						<StatRow label={t.vaults.klcPrice} value={live.klcPrice} accent='text-green-400' />
+						<StatRow label={t.vaults.kmtPrice} value={live.kmtPrice} accent='text-green-400' />
 					</StatPanel>
 					<StatPanel icon={Boxes} title={t.projects.title}>
 						{liveProducts.map((product) => (

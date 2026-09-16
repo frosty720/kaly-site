@@ -310,9 +310,9 @@
 		"lead": "KalyChain is a public blockchain. Its future is decided by those who use it, build it and believe in it.",
 		"stats": {
 			"treasury": "DAO Treasury",
-			"treasuryUnit": "KLC",
+			"treasuryUnit": "KMT",
 			"votingPower": "Voting Power",
-			"votingPowerUnit": "gKLC",
+			"votingPowerUnit": "gKMT",
 			"proposals": "Proposals",
 			"proposalsUnit": "Active",
 			"quorum": "Quorum",
@@ -345,12 +345,12 @@
 		"howTitle": "How to Participate in Governance?",
 		"steps": [
 			{
-				"title": "Get gKLC",
-				"body": "Convert your KLC into governance tokens (gKLC) to gain voting power."
+				"title": "Get gKMT",
+				"body": "Convert your KMT into governance tokens (gKMT) to gain voting power."
 			},
 			{
 				"title": "Vote or Propose",
-				"body": "Vote on existing proposals or create your own (100k gKLC minimum)."
+				"body": "Vote on existing proposals or create your own. A proposal needs 4% of gKMT (≈94K) voting to pass."
 			},
 			{
 				"title": "Shape the Future",
@@ -383,7 +383,7 @@
 			"minted": "Vaults Minted",
 			"positions": "POL LP Positions",
 			"reserve": "POL Reserve",
-			"klcPrice": "KLC Price (DEX)"
+			"kmtPrice": "KMT Price (DEX)"
 		},
 		"projects": {
 			"title": "LIVE PRODUCTS",
@@ -705,7 +705,6 @@
 					"docs": "Documentation",
 					"whitepaper": "Whitepaper",
 					"github": "GitHub",
-					"chainlist": "Chainlist",
 					"roadmap": "Roadmap"
 				}
 			},
