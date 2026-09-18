@@ -1,27 +1,19 @@
 import { notFound } from 'next/navigation';
 import { getDictionary, isLocale } from '@/i18n';
 import { getLiveStats } from '@/lib/stats';
-import { Audiences } from '@/components/landing/audiences';
 import { Benchmark } from '@/components/landing/benchmark';
+import { Cta } from '@/components/landing/cta';
 import { Developers } from '@/components/landing/developers';
 import { Ecosystem } from '@/components/landing/ecosystem';
-import { FloatButton } from '@/components/landing/float-button';
 import { Footer } from '@/components/landing/footer';
 import { Governance } from '@/components/landing/governance';
-import { Grants } from '@/components/landing/grants';
 import { Header } from '@/components/landing/header';
-import { Heritage } from '@/components/landing/heritage';
 import { Hero } from '@/components/landing/hero';
-import { Kalybot } from '@/components/landing/kalybot';
-import { Manifesto } from '@/components/landing/manifesto';
-import { Problem } from '@/components/landing/problem';
 import { Roadmap } from '@/components/landing/roadmap';
 import { ScrollFx } from '@/components/landing/scroll-fx';
-import { Security } from '@/components/landing/security';
-import { Solution } from '@/components/landing/solution';
-import { Sustainability } from '@/components/landing/sustainability';
-import { Synergy } from '@/components/landing/synergy';
+import { Technology } from '@/components/landing/technology';
 import { Traction } from '@/components/landing/traction';
+import { Why } from '@/components/landing/why';
 
 export const revalidate = 300;
 
@@ -32,30 +24,22 @@ export default async function Page({ params }: { params: { locale: string } }) {
 	const live = await getLiveStats();
 
 	return (
-		<div className='bg-ink text-cream overflow-x-hidden'>
+		<div className='bg-ink text-zinc-50 overflow-x-hidden'>
 			<ScrollFx />
 			<Header nav={dict.nav} locale={locale} />
-			<main id='top'>
+			<main className='relative overflow-x-hidden'>
 				<Hero t={dict.hero} live={live} />
-				<Problem t={dict.problem} />
-				<Heritage t={dict.heritage} />
-				<Solution t={dict.solution} />
+				<Traction t={dict.traction} yearsUnit={dict.hero.stats.yearsUnit} live={live} locale={locale} />
+				<Why t={dict.why} />
 				<Benchmark t={dict.benchmark} />
 				<Ecosystem t={dict.ecosystem} />
+				<Technology t={dict.tech} />
 				<Developers t={dict.developers} />
-				<Kalybot t={dict.kalybot} />
-				<Synergy t={dict.synergy} />
-				<Governance t={dict.governance} live={live} />
-				<Traction t={dict.traction} live={live} />
+				<Governance t={dict.governance} live={live} locale={locale} />
 				<Roadmap t={dict.roadmap} />
-				<Grants t={dict.grants} />
-				<Audiences t={dict.audiences} />
-				<Manifesto t={dict.manifesto} />
-				<Security t={dict.security} />
-				<Sustainability t={dict.sustainability} />
+				<Cta t={dict.cta} />
 			</main>
-			<FloatButton label={dict.floatBtn} locale={locale} />
-			<Footer t={dict.footer} locale={locale} />
+			<Footer t={dict.footer} nav={dict.nav} locale={locale} />
 		</div>
 	);
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Fraunces, Inter, Space_Grotesk } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import '../globals.css';
 import { getDictionary, isLocale, locales, localePath } from '@/i18n';
@@ -14,12 +14,6 @@ const spaceGrotesk = Space_Grotesk({
 	subsets: ['latin'],
 	weight: ['400', '500', '600', '700'],
 	variable: '--font-space-grotesk',
-});
-
-const fraunces = Fraunces({
-	subsets: ['latin'],
-	weight: ['400', '500', '600'],
-	variable: '--font-fraunces',
 });
 
 export function generateStaticParams() {
@@ -71,7 +65,7 @@ export default function RootLayout({ children, params }: LayoutProps) {
 	return (
 		<html lang={params.locale} suppressHydrationWarning>
 			<body
-				className={`${inter.variable} ${spaceGrotesk.variable} ${fraunces.variable} font-sans bg-ink text-cream overflow-x-hidden`}
+				className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-ink text-zinc-50 antialiased overflow-x-hidden`}
 			>
 				{children}
 			</body>

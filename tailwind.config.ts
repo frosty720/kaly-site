@@ -25,7 +25,6 @@ const config = {
         "system-ui",
         "sans-serif",
       ],
-      "serif-k": ["var(--font-fraunces)", "Fraunces", "Georgia", "serif"],
       mono: ["var(--font-jetbrains-mono)", "JetBrains Mono", "monospace"],
     },
     extend: {
@@ -95,17 +94,13 @@ const config = {
         },
         // Landing palette — brand gold (kusd-ui/kaly-site) on near-black
         ink: "#0A0A0A",
-        surface: "#141414",
-        surfacealt: "#1A1A1A",
-        cream: "#F5F0E6",
+        // Gold tokens copied from the KalySwap app (frontend globals.css) so the landing matches it exactly
         gold: {
           DEFAULT: "#F59E0B",
-          dark: "#D97706",
+          light: "#FBBF24",
+          soft: "rgba(245, 158, 11, 0.12)",
         },
-        goldbright: "#F7931A",
-        violet: {
-          DEFAULT: "#8B5CF6",
-        },
+        "on-gold": "#1A1206",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

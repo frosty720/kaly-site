@@ -31,13 +31,12 @@ describe('dictionary parity', () => {
 	it('no dictionary has empty leaf strings where en has content', () => {
 		for (const dict of [en, fr, es]) {
 			const paths = leafPaths(dict as Json);
-			// Only titleB slots may legitimately be empty (heritage line-break variance)
 			const empties = paths.filter((p) => {
 				const value = p
 					.replace(/\[(\d+)\]/g, '.$1')
 					.split('.')
 					.reduce<Json>((acc, key) => (acc as never)[key], dict as Json);
-				return value === '' && !p.endsWith('titleB');
+				return value === '';
 			});
 			expect(empties).toEqual([]);
 		}
@@ -67,8 +66,8 @@ describe('locale helpers', () => {
 	});
 
 	it('returns the right dictionary per locale', () => {
-		expect(getDictionary('fr').hero.titleGradient).toBe('Confiance');
-		expect(getDictionary('en').hero.titleGradient).toBe('Trust');
-		expect(getDictionary('es').hero.titleGradient).toBe('Confianza');
+		expect(getDictionary('fr').hero.titleGradient).toBe('de la Confiance');
+		expect(getDictionary('en').hero.titleGradient).toBe('of Trust');
+		expect(getDictionary('es').hero.titleGradient).toBe('de la Confianza');
 	});
 });

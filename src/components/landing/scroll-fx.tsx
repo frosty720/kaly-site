@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { formatCounterValue } from '@/lib/format';
 
 /**
  * Global scroll effects for the landing page:
@@ -29,6 +30,7 @@ export function ScrollFx() {
 		);
 		revealElements.forEach((el) => revealObserver.observe(el));
 
+		const locale = document.documentElement.lang || 'en';
 		const counters = document.querySelectorAll<HTMLElement>('[data-counter]');
 		const animateCounter = (el: HTMLElement) => {
 			const target = parseFloat(el.dataset.counter ?? '0');
@@ -36,7 +38,7 @@ export function ScrollFx() {
 			const prefix = el.dataset.prefix ?? '';
 			const suffix = el.dataset.suffix ?? '';
 			const render = (value: number) => {
-				el.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
+				el.textContent = `${prefix}${formatCounterValue(value, decimals, locale)}${suffix}`;
 			};
 			if (reduceMotion) {
 				render(target);
